@@ -42,6 +42,7 @@ Once your link lengths are validated, you are expected to find out graphically t
 To get an animated guidance of the graphical analysis using the applet click below:
 
 [Steps how to use the Drawing Board to find coupler position](drawing-board-js/drawing-board-demo.html)
+
 Validate your answer using the applet below.
 <p style="text-align: center;">
  <object width="700" height="400" data="./content/GrashofRRPRInvertedSliderCrankCouplerPositionChecker/index.html">
