@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script language="JavaScript" type="text/javascript">
+function checkGrashof() {
+
+    var l1 = document.getElementById("ground").value;
+    var l2 = document.getElementById("crank").value;
+    var l3 = document.getElementById("coupler_offset").value;
+    var l4 = document.getElementById("slider_offset").value;
+    var theta41 = document.getElementById("theta4_limit_1").value;
+    var theta42 = document.getElementById("theta4_limit_2").value;
+    var slider = document.getElementById("slider_limit").value;
+       
+
+	var theta41_ = Math.acos((l2-(l4-l3))/l1)*180.0/Math.PI;
+	var theta42_  = Math.acos((l2+(l4-l3))/l1)*180.0/Math.PI;
+
+	var s41_  = Math.sqrt( l1*l1-(l2-(l4-l3))*(l2-(l4-l3)));
+	var s42_  = Math.sqrt( l1*l1-(l2+(l4-l3))*(l2+(l4-l3)));
+	
+	err_theta41 = (Math.abs((theta41 - theta41_) / theta41_) * 100);
+	err_theta42 = (Math.abs((theta42 - theta42_) / theta42_) * 100);
+	err_slider = Math.abs((Math.abs(s41_-s42_)-slider) / Math.abs(s41_-s42_) * 100);
+	document.getElementById("error_theta41").innerHTML = "Theta4 Limit 1 = " + theta41_ + "          ,     Error = "+err_theta41+" %";
+	document.getElementById("error_theta42").innerHTML = "Theta4 Limit 2 = " + theta42_ + "          ,     Error = "+err_theta42+" %";
+	document.getElementById("error_slider").innerHTML = "Slider displacement = " + Math.abs(s41_-s42_) + "          ,     Error = "+slider+" %";
+
+}
+</script>
+<style type="text/css">
+<!--
+.style1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+.style2 {font-family: Verdana, Arial, Helvetica, sans-serif}
+-->
+</style>
+</head>
+<body>
+<label></label>
+<label><span class="style1">Validate Graphical Analysis for Limits of Slider</span><span class="style2"><br />
+Link Length 1 (Ground) :
+<input id="ground" type="number">
+<br />
+Link Length 2 (Crank) :
+<input type="number" id="crank" />
+<br />
+</span></label>
+<span class="style2">
+<label>Link Length 3 (Coupler offset) :
+<input type="number" id="coupler_offset" />
+</label>
+<label><br />
+Link Length 4 (Slider offset) :
+<input type="number" id="slider_offset" />
+</label>
+<label><br />
+Theta 4 limit 1  :
+<input type="number" id="theta4_limit_1" />
+</label>
+<label><br />
+Theta 4 limit 2  :
+<input type="number" id="theta4_limit_2" />
+</label>
+<label><br />
+Slider displacement between limits :
+<input type="number" id="slider_limit" />
+</label>
+<br />
+<label></label><label></label>
+<input name="submit" type="submit" id="Submit" onclick="checkGrashof()" value="Check"/>
+</span>
+<p id="error_theta41"></p>
+<p id="error_theta42"></p>
+<p id="error_slider"></p>
+</body>
+</html>
