@@ -1,7 +1,7 @@
 ## Introduction
 **Position Analysis of a 4 Bar RRPR Grashofian Inverted Slider Crank Rocker Mechanism**
 <div align="center">
-<img src="images/RRPR_schematic.gif" width="50%">
+<img src="images/RRPR_schematic.gif" width="30%">
 </div>
 The 4 bar RRRP mechanism (and its inversions - RRPR or RPRR) is another basic mechanism in studies on kinematics. It is also widely used in various forms because of the relative simplicity of design and manufacture. Like RRRR linkages, Grashof's criteria is used to distinguish between 4 bar linkages with one prismatic joint, depending on the rotatability of the links In brief, if l is the shorter of the crank and the coupler and L the longer of the two, and e is the offset, then the following cases arise
 
