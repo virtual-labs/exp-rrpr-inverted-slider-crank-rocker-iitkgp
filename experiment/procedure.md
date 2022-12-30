@@ -9,9 +9,7 @@ The following are animated guides for analytical and graphical methods of positi
 The following are animated guides for analytical and graphical methods of position analysis for a 4 bar RRPR Grashofian Inverted Slider Crank.
 
 
-$$\overline{ AB }$$
 
-$$ \overline{AB} $$
 
  <p class="heading-content">
    <object width="900" height="700" data="./content/Cmplx_pos_ana_RRPR/index.html"></object>
